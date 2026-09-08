@@ -4,11 +4,11 @@ import random
 st.set_page_config(page_title="Planificador de Menús", page_icon="🥗", layout="wide")
 
 # Base de datos de recetas
-recetas_desayunos = ["Gachas de avena con bayas", "Tostada de aguacate", "Yogur con nueces", "Tortilla de espinacas"]
+recetas_desayunos = ["pan con pollo o pavo"]
 recetas_comidas = {
-    "Lentejas estofadas con verduras": ["Lentejas", "Zanahoria", "Cebolla", "Pimiento"],
-    "Pechuga de pollo con arroz integral": ["Pechuga de pollo", "Arroz integral", "Ajo"],
-    "Salmón al horno con patatas": ["Lomo de salmón", "Patatas", "Romero"],
+    "pollo con patatas y judias" ,
+    "ternera con patatas y esparragos",
+    "Salmón al horno con patatas y zanahorias",
     "Ensalada completa de atún y aguacate": ["Lechuga", "Atún en lata", "Aguacate", "Tomate"]
 }
 recetas_cenas = {
