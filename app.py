@@ -1,18 +1,9 @@
 import streamlit as st
 import random
 
-# Configuración de página
-st.set_page_config(page_title="Planificador de Menús", page_icon="🥗")
+st.set_page_config(page_title="Planificador de Menús", page_icon="🥗", layout="wide")
 
-# Estilos personalizados en tonos tierra y beige
-st.markdown("""
-    <style>
-    .main { background-color: #FDFBF7; }
-    .stButton>button { background-color: #8C7A6B; color: white; border-radius: 8px; }
-    h1, h2, h3 { color: #5C4D42; }
-    </style>
-""", unsafe_allow_html=True)
-
+# Base de datos de recetas
 recetas_desayunos = ["Gachas de avena con bayas", "Tostada de aguacate", "Yogur con nueces", "Tortilla de espinacas"]
 recetas_comidas = {
     "Lentejas estofadas con verduras": ["Lentejas", "Zanahoria", "Cebolla", "Pimiento"],
@@ -29,10 +20,10 @@ recetas_cenas = {
 recetas_snacks = ["Frutos secos naturales", "Una pieza de fruta", "Hummus con zanahoria"]
 dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
 
-st.title("🥗 Planificador de Menús Saludables")
-st.write("Genera tu menú semanal relajante en tonos calma.")
+st.title("🥗 PLANIFICADOR DE MENÚS SALUDABLES")
+st.write("Genera tu menú semanal de forma relajante.")
 
-if st.button("🎲 Generar Nuevo Menú de Calma"):
+if st.button("🎲 Generar Nuevo Menú de Calma", type="primary"):
     texto_menu = ""
     lista_compra = set()
     
@@ -50,11 +41,12 @@ if st.button("🎲 Generar Nuevo Menú de Calma"):
         texto_menu += f"* ☀️ **Comida:** {comida}\n"
         texto_menu += f"* 🌙 **Cena:** {cena}\n"
         texto_menu += f"* 🍎 **Snack:** {snack}\n\n"
+        texto_menu += "---\n"
     
     col1, col2 = st.columns([2, 1])
     with col1:
         st.markdown(texto_menu)
     with col2:
-        st.subheader("🛒 Lista de la Compra")
+        st.markdown("### 🛒 LISTA DE LA COMPRA")
         for ing in sorted(lista_compra):
-            st.write(f"• {ing}")
+            st.markdown(f"• {ing}")
